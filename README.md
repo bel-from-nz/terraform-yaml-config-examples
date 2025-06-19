@@ -20,4 +20,5 @@ To run each stage:
 
 Follow the README in each stage directory:
 
-- [Stage1](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/tree/main/yaml-stage1)
+- [Stage 1](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/yaml-stage1/README.md)
+- [Stage 2](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/yaml-stage2/README.md)
