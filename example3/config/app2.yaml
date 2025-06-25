@@ -1,0 +1,17 @@
+resource_groups:
+  rg1:
+    name: rg-app2-${env}-${short_location}-01
+    location: ${default_location}
+
+virtual_networks:
+  v1:
+    name: vnet-app2-${env}-${short_location}-01
+    resource_group_key: app2-rg1
+    location : ${default_location}
+    address_space:
+      - 10.1.0.0/24
+    subnets:
+      s1:
+        name: snet-app
+        address_prefixes:
+          - 10.1.0.0/24
