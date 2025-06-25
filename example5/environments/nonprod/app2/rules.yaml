@@ -1,0 +1,26 @@
+## rule set name must be between 1 and 60 characters in length, begin with a letter and may contain only letters and numbers
+front_door_rule_sets:
+  - "app2ruleset1"
+
+front_door_rules:
+    rule1:
+      name: "rule1"
+      order: 1
+      behavior_on_match: "Continue"
+      rule_set_name: "app2ruleset1"
+      origin_group_key: "app2-config-og1"
+
+      actions:
+        url_rewrite_actions:
+          - source_pattern: "/index3.html"
+            destination: "/"
+            preserve_unmatched_path: false
+
+      conditions:
+        query_string_conditions:
+          - negate_condition: false
+            operator: "BeginsWith"
+            match_values:
+              - "Query1"
+            transforms:
+              - "Uppercase"

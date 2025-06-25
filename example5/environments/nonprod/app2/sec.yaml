@@ -1,0 +1,11 @@
+## WAF association to endpoint or domain or both
+## key pattern is subdir_filename_key
+front_door_security_policies:
+  secpol1:
+    name: "app2-fw-secpol1"
+    firewall:
+      front_door_firewall_policy_key: "app1-waf1"
+      association:
+        endpoint_keys: ["app2-config-ep1"]
+        domain_keys: ["app2-domain-d1"]
+        patterns_to_match: ["/*"]

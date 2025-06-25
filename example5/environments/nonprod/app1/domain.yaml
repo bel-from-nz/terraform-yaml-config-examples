@@ -1,0 +1,7 @@
+front_door_custom_domains:
+  d1:
+    name: app1domain
+    host_name: app1.example.com
+    tls:
+      certificate_type: "ManagedCertificate"
+      minimum_tls_version: "TLS12"

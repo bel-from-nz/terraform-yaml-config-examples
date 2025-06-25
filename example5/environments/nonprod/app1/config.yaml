@@ -1,0 +1,49 @@
+## key pattern is subdir-filename-key
+front_door_endpoints:
+  ep1:
+    name: "app1-ep1"
+
+front_door_origin_groups:
+  og1:
+    name: "app1-og1"
+    health_probe:
+      hp1:
+        interval_in_seconds: 240
+        path: "/"
+        protocol: "Https"
+        request_type: "HEAD"
+    load_balancing:
+      lb1:
+        additional_latency_in_milliseconds: 0
+        sample_size: 16
+        successful_samples_required: 3
+
+front_door_origins:
+  or1:
+    name: "app1"
+    origin_group_key: "app1-config-og1"
+    enabled: true
+    certificate_name_check_enabled: false
+    host_name: "app1-01.australiaeast-01.azurewebsites.net"
+    http_port: 80
+    https_port: 443
+    host_header: "app1-01.australiaeast-01.azurewebsites.net"
+    priority: 1
+    weight: 1
+
+front_door_routes:
+  rt1:
+    name: "app1-rt1"
+    endpoint_key: "app1-config-ep1"
+    origin_group_key: "app1-config-og1"
+    origin_keys:
+      - "app1-config-or1"
+    custom_domain_keys:
+      - "app1-domain-d1"
+    forwarding_protocol: "HttpsOnly"
+    https_redirect_enabled: true
+    patterns_to_match:
+      - "/*"
+    supported_protocols:
+      - "Http"
+      - "Https"

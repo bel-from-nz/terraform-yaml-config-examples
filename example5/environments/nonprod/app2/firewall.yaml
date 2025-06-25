@@ -1,0 +1,40 @@
+front_door_firewall_policies:
+  waf1:
+    name_part: app2
+    mode: "Prevention"
+    managed_rules:
+      mr_default:
+        type: "Microsoft_DefaultRuleSet"
+        version: "2.1"
+        action: "Block"
+      mr_bot:
+        type: "Microsoft_BotManagerRuleSet"
+        version: "1.1"
+        action: "Block"
+        overrides:
+          ov1:
+            rule_group_name: "GoodBots"
+            rules:
+              rule1:
+                rule_id: "Bot200400"
+                action: "Block"
+                enabled: true
+              rule2:
+                rule_id: "Bot200700"
+                action: "Block"
+                enabled: true
+          ov2:
+            rule_group_name: "UnknownBots"
+            rules:
+              rule1:
+                rule_id: "Bot300200"
+                action: "Block"
+                enabled: true
+              rule2:
+                rule_id: "Bot300600"
+                action: "Block"
+                enabled: true
+              rule3:
+                rule_id: "Bot300700"
+                action: "Block"
+                enabled: true

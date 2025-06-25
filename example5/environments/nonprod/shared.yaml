@@ -1,0 +1,18 @@
+front_door_firewall_policies:
+  waf1_default:
+    name_part: default
+    mode: "Prevention"
+    managed_rules:
+      mr_default:
+        type: "Microsoft_DefaultRuleSet"
+        version: "2.1"
+        action: "Block"
+      mr_bot:
+        type: "Microsoft_BotManagerRuleSet"
+        version: "1.1"
+        action: "Block"
+
+front_door_secrets:
+  ssl1:
+    name: ssl-example-com
+    key_vault_certificate_id: "https://kvabc01.vault.azure.net/certificates/example-com"

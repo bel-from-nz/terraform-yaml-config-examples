@@ -23,3 +23,4 @@ Follow the README in each example directory:
 - [Example 2](https://github.com/bel-from-nz/terraform-yaml-config-examples/blob/main/example2/README.md)
 - [Example 3](https://github.com/bel-from-nz/terraform-yaml-config-examples/blob/main/example3/README.md)
 - [Example 4](https://github.com/bel-from-nz/terraform-yaml-config-examples/blob/main/example4/README.md)
+- [Example 5](https://github.com/bel-from-nz/terraform-yaml-config-examples/blob/main/example5/README.md)
