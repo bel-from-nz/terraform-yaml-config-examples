@@ -1,0 +1,4 @@
+resource_groups:
+  rg1:
+    name: rg-app2-dev-ae-01
+    location: australiaeast

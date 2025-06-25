@@ -1,0 +1,15 @@
+fruits:
+  - apple
+  - pear
+  - orange
+  - kiwi
+
+fruit-objects:
+  - name: apple
+    type: fruit
+  - name: pear
+    type: fruit
+  - name: orange
+    type: fruit
+  - name: kiwi
+    type: fruit

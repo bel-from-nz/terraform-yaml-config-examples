@@ -1,0 +1,44 @@
+string:
+  f1: apple
+  f2: pear
+  f3: orange
+  f4: kiwi
+
+object:
+  f1:
+    name: apple
+    type: fruit
+  f3:
+    name: pear
+    type: fruit
+  f4:
+    name: orange
+    type: fruit
+  f5:
+    name: kiwi
+    type: fruit
+
+nested:
+  f1:
+    name: apple
+    type: fruit
+    options:
+      c1:
+       type: granny smith
+       colour: green
+      c2:
+       type: braeburn
+       colour: red
+  f3:
+    name: pear
+    type: fruit
+    options:
+      c1:
+       type: taylors gold
+       colour: green
+  f4:
+    name: orange
+    type: fruit
+  f5:
+    name: kiwi
+    type: fruit
