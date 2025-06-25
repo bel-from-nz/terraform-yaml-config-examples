@@ -9,9 +9,9 @@ virtual_networks:
     resource_group_key: app2-rg1
     location : ${default_location}
     address_space:
-      - 10.1.0.0/24
+      - 10.2.0.0/24
     subnets:
       s1:
         name: snet-app
         address_prefixes:
-          - 10.1.0.0/24
+          - 10.2.0.0/24

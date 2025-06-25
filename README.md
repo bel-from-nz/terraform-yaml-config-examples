@@ -9,8 +9,6 @@ Yaml allows easy specification of maps, objects, etc to be decoded from files in
 - Have terraform [installed](https://developer.hashicorp.com/terraform/install)
 - Clone this repos `git clone https://github.com/bel-from-nz/terraform-yaml-config-tutorial.git`
 
-All examples use only local backend and simple providers like [hashicorp/local](https://registry.terraform.io/providers/hashicorp/local/latest) and [hashicorp/random](https://registry.terraform.io/providers/hashicorp/random/latest).
-
 To demonstrate each example:
 
 - Change to the example directory
@@ -24,3 +22,4 @@ Follow the README in each example directory:
 - [Example 1](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/example1/README.md)
 - [Example 2](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/example2/README.md)
 - [Example 3](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/example3/README.md)
+- [Example 4](https://github.com/bel-from-nz/terraform-yaml-config-tutorial/blob/main/example4/README.md)

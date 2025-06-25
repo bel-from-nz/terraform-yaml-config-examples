@@ -1,0 +1,41 @@
+resource_groups:
+  %{~ for key, data in app_list ~}
+  rg_${key}:
+    name: rg-${data.name_part}-${env}-${short_location}-01
+    location: ${default_location}
+  %{~ endfor ~}
+
+virtual_networks:
+  %{~ for key, data in app_list ~}
+  vn_${key}:
+    name: vnet-${data.name_part}-${env}-${short_location}-01
+    resource_group_key: apps-rg_${key}
+    location : ${default_location}
+    address_space:
+    %{~ for addr in data.address_spaces ~}
+      - ${addr}
+    %{~ endfor ~}
+    subnets:
+      %{~ for snet_key, subnet in data.subnets ~}
+      ${snet_key}:
+        name: snet_${subnet.name_part}
+        address_prefixes:
+        %{~ for addr in subnet.address_spaces ~}
+          - ${addr}
+        %{~ endfor ~}
+        %{~ if subnet.delegation_enabled ~}
+        delegation:
+          %{~ for kd, dd in subnet.delegations ~}
+          - name: ${dd.name}
+            service_delegation:
+              name: ${dd.service}
+          %{~ endfor ~}
+        %{~ endif ~}
+        %{~ if subnet.service_endpoints_enabled ~}
+        service_endpoints:
+          %{~ for se in subnet.service_endpoints ~}
+          - ${se}
+          %{~ endfor ~}
+        %{~ endif ~}
+      %{~ endfor ~}
+   %{~ endfor ~}
